@@ -1,0 +1,178 @@
+<script type="text/html" data-template-name="mapping">
+    <div class="form-row">
+        <label for="node-config-input-url"><span>URL</span></label>
+        <input type="text" id="node-config-input-url">
+    </div>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('mapping', {
+        category: 'config',
+        color: "rgb(218, 196, 180)",
+        defaults: {
+            url: { value: "http://localhost:1880", required: true }
+        },
+        label: function () {
+            return 'mapping'
+        },
+        oneditsave: async function () {
+            var node = this;
+            node.url = this.url;
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="mapper">
+    <style>
+        ol#node-input-rule-container .red-ui-typedInput-container {
+            flex:1;
+        }
+    </style>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-mapping"><span>Mapping</span></label>
+        <input type="text" id="node-input-mapping">
+    </div>
+    <div class="form-row" style="margin-bottom:0;">
+        <label><i class="fa fa-list"></i> <span>Rules</span></label>
+    </div>
+
+    <div class="form-row node-input-rule-container-row">
+        <ol id="node-input-rule-container"></ol>
+    </div>
+
+</script>
+
+<script type="text/javascript">
+    const getObjectKeys = (obj, prefix = '') => {
+        return Object.entries(obj).reduce((collector, [key, val]) => {
+            const newKeys = [...collector, prefix ? `${prefix}.${key}` : key]
+            if (Object.prototype.toString.call(val) === '[object Object]') {
+                const newPrefix = prefix ? `${prefix}.${key}` : key
+                const otherKeys = getObjectKeys(val, newPrefix)
+                return [...newKeys, ...otherKeys]
+            }
+            return newKeys
+        }, [])
+    }
+    let inputMapping = {}, outputMapping = {};
+    RED.nodes.registerType('mapper', {
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: { value: "" },
+            rules: { value: [] },
+            mapping: { type: "mapping", required: true },
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "file.png",
+        label: function () {
+            return this.name || "mapper";
+        },
+        oneditprepare: function () {
+            const to = 'to'
+            $('#node-input-rule-container').css('min-height', '150px').css('min-width', '450px').editableList({
+                addItem: async (container, index, data) => {
+                    var rule = data;
+                    var url = '';
+                    RED.nodes.eachConfig((config) => {
+                        if (this.mapping === config.id && config.url) {
+                            url = config.url;
+                        }
+                    });
+
+                    const promise = new Promise((resolve) => {
+                        $.get(url, (data) => {
+                            resolve(data)
+                        }).fail(() => resolve({ input: {}, output: {} }));
+                    });
+
+                    const { input: inputMapping, output: outputMapping } = await promise;
+                    if (!rule.hasOwnProperty('t')) {
+                        rule = { t: "set", pi: "payload", po: "payload" };
+                    }
+
+                    let fragment = document.createDocumentFragment();
+                    var row1 = $('<div/>', { style: "display:flex;" }).appendTo(fragment);
+                    var row2 = $('<div/>', { style: "display:flex;margin-top:8px;" }).appendTo(fragment);
+
+                    $('<div/>', { style: "display:inline-block;text-align:right; width:120px; padding-right:10px; box-sizing:border-box;" })
+                        .text(to)
+                        .appendTo(row2);
+
+                    var selectField = $('<select/>', { class: "node-input-rule-type", style: "width:110px; margin-right:10px;" }).appendTo(row1);
+                    var selectOptions = [{ v: "set", l: 'set' }, { v: "move", l: 'move' }];
+                    for (var i = 0; i < 2; i++) {
+                        selectField.append($("<option></option>").val(selectOptions[i].v).text(selectOptions[i].l));
+                    }
+                    container.css({
+                        overflow: 'hidden',
+                        whiteSpace: 'nowrap'
+                    });
+                    const selectOutput = $('<select></select>', { class: "node-ouput-rule-property-name", style: 'width: 100%' })
+                        .appendTo(row1)
+
+                    const outputKeys = getObjectKeys(outputMapping);
+                    const outputOptions = outputKeys.map(i => ({ v: i, l: i }));
+
+                    for (var i = 0; i < outputKeys.length; i++) {
+                        selectOutput.append($("<option></option>").val(outputOptions[i].v).text(outputOptions[i].l));
+                    }
+
+                    const selectInput = $('<select></select>', { class: "node-input-rule-property-name", style: 'width: 100%' })
+                        .appendTo(row2)
+
+                    const inputKeys = getObjectKeys(inputMapping)
+                    const inputOptions = inputKeys.map(i => ({ v: i, l: i }));
+
+                    for (var i = 0; i < inputKeys.length; i++) {
+                        selectInput.append($("<option></option>").val(inputOptions[i].v).text(inputOptions[i].l));
+                    }
+
+                    $(selectInput).find(`option[value="${rule.pi}"]`).attr('selected', true)
+                    $(selectOutput).find(`option[value="${rule.po}"]`).attr('selected', true)
+                    container[0].appendChild(fragment);
+                },
+                removable: true,
+                sortable: true,
+            })
+            // if (!this.rules) {
+            //     $('#node-input-rule-container').editableList('addItem', rule);
+            // }
+            for (var i = 0; i < this.rules.length; i++) {
+                var rule = this.rules[i];
+                $("#node-input-rule-container").editableList('addItem', rule);
+            }
+        },
+        oneditsave: function () {
+            var rules = $("#node-input-rule-container").editableList('items');
+            var node = this;
+            node.rules = [];
+            rules.each(function (i) {
+                var rule = $(this);
+                var type = rule.find(".node-input-rule-type").val();
+                var r = {
+                    t: type,
+                    pi: rule.find(".node-input-rule-property-name").val(),
+                    po: rule.find(".node-ouput-rule-property-name").val()
+                };
+                node.rules.push(r);
+            })
+        },
+        oneditresize: function (size) {
+            var rows = $("#dialog-form>div:not(.node-input-rule-container-row)");
+            var height = size.height;
+            for (var i = 0; i < rows.length; i++) {
+                height -= $(rows[i]).outerHeight(true);
+            }
+            var editorRow = $("#dialog-form>div.node-input-rule-container-row");
+            height -= (parseInt(editorRow.css("marginTop")) + parseInt(editorRow.css("marginBottom")));
+            height += 16;
+            $("#node-input-rule-container").editableList('height', height);
+        }
+    });
+</script>

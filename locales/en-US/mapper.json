@@ -1,0 +1,9 @@
+{
+    "mapping": {
+        "label": {
+            "inputMapping": "Input",
+            "outputMapping": "Output",
+            "mapping": "Mapping"
+        }
+    }
+}
