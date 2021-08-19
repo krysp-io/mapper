@@ -1,0 +1,16 @@
+{
+  "input" :{
+    "name" : "",
+    "age": 0,
+    "address" :{
+      "street" : ""
+    },
+    "test": ""
+  },
+    "output" :{
+    "name" : "",
+    "age": 0,
+    "info" :{
+      "street" : ""
+    }
+}
