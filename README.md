@@ -16,6 +16,7 @@ Run the following command in the root directory of your Node-RED install
 
 Or else install the package directly from Manage Palette
 
+
 <p align='center'>
 <img src='https://static.node.iopulsedev.net/ManagePalette.png' alt='manage palette'>
 </p>
