@@ -15,8 +15,10 @@ Run the following command in the root directory of your Node-RED install
         npm install node-red-contrib-field-mapper
 
 Or else install the package directly from Manage Palette
+![foo](https://www.google.com/search?q=images&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiMgo7Nur_yAhUNfisKHRMnDngQ_AUoAXoECAEQAw&biw=1853&bih=949#imgrc=L8xfQakH9a8tJM "title")
 
-
+# Usage
+-------
 
 # Demo
 -----
