@@ -26,4 +26,4 @@ Or else install the package directly from Manage Palette
 
 # Demo
 -----
-https://www.youtube.com/watch?v=U3YuTAf7YG4
+<a href="https://www.youtube.com/watch?v=U3YuTAf7YG4" target="_blank"/>
