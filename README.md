@@ -22,4 +22,4 @@ Or else install the package directly from Manage Palette
 
 # Demo
 -----
-https://drive.google.com/file/d/1zNx6Si4X_f_rFMa5115394dZzzWjpkaf/view?usp=sharing
+https://www.youtube.com/watch?v=U3YuTAf7YG4
