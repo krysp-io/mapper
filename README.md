@@ -24,4 +24,8 @@ Or else install the package directly from Manage Palette
 # Usage
 -------
 
-<a href="https://www.youtube.com/watch?v=U3YuTAf7YG4" target="_new">Demo</a>
+
+# Demo
+-------
+
+https://www.youtube.com/watch?v=U3YuTAf7YG4
