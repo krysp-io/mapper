@@ -27,6 +27,7 @@ Or else install the package directly from Manage Palette
 -------
 
 Parameters need to be specified as per the example given below
+<p>
 {
   "input" :{
     "name" : "",
@@ -43,6 +44,7 @@ Parameters need to be specified as per the example given below
       "street" : ""
     }
 }
+        </p>
 Field name-name, age, address, test should be given as per requirement.
 
 
