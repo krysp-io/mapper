@@ -25,14 +25,27 @@ Or else install the package directly from Manage Palette
 
 # Usage
 -------
-Create a HTTP in node with url.
-Provide HTTP response in the format {
+<p>1) Create a HTTP in node with url.</p>
+<p>2) Attach a function node with msg.payload as {
   "input" :{
-   
+    "name" : "",
+    "age": 0,
+    "address" :{
+      "street" : ""
+    },
+    "test": ""
   },
     "output" :{
-   }
+    "name" : "",
+    "age": 0,
+    "info" :{
+      "street" : ""
+    }
 }
+        <p>Note*: Field Name-name, age, address will be given as per the requirement.
+<p>3) Attach a Http reponse node.</p>
+<p>4) Point the url in the config node mapping of mapper node.</p>
+
 Point the msg.mapping to the url 
 
 
