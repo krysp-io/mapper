@@ -44,9 +44,8 @@ Or else install the package directly from Manage Palette
 }
         <p>Note*: Field Name-name, age, address will be given as per the requirement.
 <p>3) Attach a Http reponse node.</p>
-<p>4) Point the url in the config node mapping of mapper node.</p>
+<p>4) Point the url in the config of mapper node.</p>
 
-Point the msg.mapping to the url 
 
 
 # Demo
