@@ -26,6 +26,25 @@ Or else install the package directly from Manage Palette
 # Usage
 -------
 
+Parameters need to be specified as per the example given below
+{
+  "input" :{
+    "name" : "",
+    "age": 0,
+    "address" :{
+      "street" : ""
+    },
+    "test": ""
+  },
+    "output" :{
+    "name" : "",
+    "age": 0,
+    "info" :{
+      "street" : ""
+    }
+}
+Field name-name, age, address, test should be given as per requirement.
+
 
 # Demo
 -------
