@@ -25,27 +25,15 @@ Or else install the package directly from Manage Palette
 
 # Usage
 -------
-
-Parameters need to be specified as per the example given below
-<p>
-{
+Create a HTTP in node with url.
+Provide HTTP response in the format {
   "input" :{
-    "name" : "",
-    "age": 0,
-    "address" :{
-      "street" : ""
-    },
-    "test": ""
+   
   },
     "output" :{
-    "name" : "",
-    "age": 0,
-    "info" :{
-      "street" : ""
-    }
+   }
 }
-        </p>
-Field name-name, age, address, test should be given as per requirement.
+Point the msg.mapping to the url 
 
 
 # Demo
