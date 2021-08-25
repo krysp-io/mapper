@@ -7,10 +7,11 @@
     },
     "test": ""
   },
-    "output" :{
-    "name" : "",
-    "age": 0,
-    "info" :{
-      "street" : ""
-    }
+  "output" :{
+      "name" : "",
+      "age": 0,
+      "info" :{
+        "street" : ""
+      }
+  }
 }
