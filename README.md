@@ -2,12 +2,11 @@
 # node-red-contrib-field-mapper
 -------
 
-A <a href="http://nodered.org" target="_new">Node-RED</a> node can be used to modify a message’s properties and set context properties without having to resort to a Function node.
+A <a href="http://nodered.org" target="_new">Node-RED</a> node can be used to modify a message’s properties without having to resort to a Function node.
 
 Each node can be configured with multiple operations that are applied in order. The available operations are:
 
-Set - set a property. The value can be a variety of different types, or can be taken from an existing message or context property.
-<p>Move - move or rename a property.</p>
+Set - set a property. The value can be a variety of different types, or can be taken from an existing message.
 
 # Install
 -------
