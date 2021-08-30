@@ -105,7 +105,7 @@
                         .appendTo(row2);
 
                     var selectField = $('<select/>', { class: "node-input-rule-type", style: "width:110px; margin-right:10px;" }).appendTo(row1);
-                    var selectOptions = [{ v: "set", l: 'set' }, { v: "move", l: 'move' }];
+                    var selectOptions = [{ v: "set", l: 'set' }];
                     for (var i = 0; i < 2; i++) {
                         selectField.append($("<option></option>").val(selectOptions[i].v).text(selectOptions[i].l));
                     }
