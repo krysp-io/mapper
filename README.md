@@ -44,24 +44,26 @@ The mapper node can be utilized in any flow with input and output JSON data. Bel
 -------
 <p>1. Create a HTTP in node with url.</p>
 <p>2. Attach a function node with msg.payload as </p>
+
         ```
         {
           "input" :{
-            "name" : "",
-            "age": 0,
+            "name" : "eugene",
+            "age": 26,
             "address" :{
-              "street" : ""
+              "street" : "homestreet"
             },
             "test": ""
           },
             "output" :{
-            "name" : "",
-            "age": 0,
+            "name" : "eugene",
+            "age": 26,
             "info" :{
-              "street" : ""
+              "street" : "homestreet"
             }
         }
         ```
+        
 <p>3. To map required fields from input to output data, open config node and <b>Set Field Values</b>. Example, select "address.street" to "info.street" to add the mapping.</p>
 <p>4. Attach a Http reponse node.</p>
 <p>5. Point the url in the config of mapper node.</p>
