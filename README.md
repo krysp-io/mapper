@@ -43,7 +43,7 @@ The mapper node can be utilized in any flow with input and output JSON data. Bel
 # Example
 -------
 <p>1. Create a HTTP in node with url.</p>
-<p>2. Attach a function node with msg.payload as 
+<p>2. Attach a function node with msg.payload as </p>
         ```
         {
           "input" :{
