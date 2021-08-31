@@ -9,7 +9,7 @@ This node can be helpful in scenarios where JSON data transformation is required
 # Pre-requisites
 -------
 
-The Node-RED-Dashboard requires Node-RED to be installed.
+The Node-RED Mapper requires Node-RED to be installed.
 
 # Install
 -------
@@ -80,8 +80,9 @@ The mapper node can be utilized in any flow with input and output JSON data. Bel
         }
         ```
 <p>6. Attach a mapper node to the inject node.</p>
-<p>6. Point the url in the config of mapper node.</p>
-<p>7. On executing this flow, the expected output will be as follows,</p>
+<p>7. Point the url in the config of mapper node.</p>
+<p>8. Attach debug node to mapper node</p>
+<p>9. On executing this flow, the expected output will be as follows,</p>
 
         ```
         {
