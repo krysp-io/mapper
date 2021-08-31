@@ -29,6 +29,7 @@
         }
         .red-ui-label {
             width: 120px !important;
+            margin: 10px 0px !important;
         }
         
     </style>
@@ -78,6 +79,7 @@
             return this.name || "mapper";
         },
         oneditprepare: function () {
+            const from = 'from';
             const to = 'to'
             $('#node-input-rule-container').css('min-height', '150px').css('min-width', '450px').editableList({
                 addItem: async (container, index, data) => {
@@ -101,12 +103,17 @@
                     }
 
                     let fragment = document.createDocumentFragment();
-                    var row1 = $('<div/>', { style: "display:flex;" }).appendTo(fragment);
-                    var row2 = $('<div/>', { style: "display:flex;margin-top:8px;" }).appendTo(fragment);
+                    var row1 = $('<div/>', { style: "display:inline-block;" }).appendTo(fragment);
+                    var row2 = $('<div/>', { style: "display:inline-block;margin-left:10px;" }).appendTo(fragment);
+
+                    $('<div/>', { style: "display:inline-block;text-align:right; width:120px; padding-right:10px; box-sizing:border-box;" })
+                        .text(from)
+                        .appendTo(row1);
 
                     $('<div/>', { style: "display:inline-block;text-align:right; width:120px; padding-right:10px; box-sizing:border-box;" })
                         .text(to)
                         .appendTo(row2);
+                    
 
                     // var selectField = $('<input/>', { class: "node-input-rule-type", style: "width:110px; margin-right:10px;"}).prop('disabled', true).val("set").appendTo(row1);
                     // var selectOptions = [{ v: "set", l: 'set' }];
@@ -117,7 +124,7 @@
                         overflow: 'hidden',
                         whiteSpace: 'nowrap'
                     });
-                    const selectOutput = $('<select></select>', { class: "node-ouput-rule-property-name", style: 'width: 100%' })
+                    const selectOutput = $('<select></select>', { class: "node-ouput-rule-property-name", style: 'width: 175px' })
                         .appendTo(row1)
 
                     const outputKeys = getObjectKeys(outputMapping);
@@ -127,7 +134,7 @@
                         selectOutput.append($("<option></option>").val(outputOptions[i].v).text(outputOptions[i].l));
                     }
 
-                    const selectInput = $('<select></select>', { class: "node-input-rule-property-name", style: 'width: 100%' })
+                    const selectInput = $('<select></select>', { class: "node-input-rule-property-name", style: 'width: 175px' })
                         .appendTo(row2)
 
                     const inputKeys = getObjectKeys(inputMapping)
