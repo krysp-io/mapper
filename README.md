@@ -42,32 +42,46 @@ The mapper node can be utilized in any flow with input and output JSON data. Bel
 
 # Example
 -------
+
 <p>1. Create a HTTP in node with url.</p>
 <p>2. Attach a function node with msg.payload as </p>
 
         ```
         {
           "input" :{
-            "name" : "eugene",
-            "age": 26,
+            "name" : "",
+            "age": "",
             "address" :{
-              "street" : "homestreet"
+              "street" : ""
             },
             "test": ""
           },
             "output" :{
-            "name" : "eugene",
-            "age": 26,
+            "name" : "",
+            "age": "",
             "info" :{
-              "street" : "homestreet"
+              "street" : ""
             }
         }
         ```
         
 <p>3. To map required fields from input to output data, open config node and <b>Set Field Values</b>. Example, select "address.street" to "info.street" to add the mapping.</p>
 <p>4. Attach a Http reponse node.</p>
-<p>5. Point the url in the config of mapper node.</p>
-<p>6. On executing this flow, the expected output will be as follows,</p>
+<p>5. Drag and drop inject node with msg.payload as </p>
+
+        ```
+        {
+            "name" : "eugene",
+            "age": 26,
+            "address" :{
+              "street" : "homestreet"
+            },
+            "test": ""
+        }
+        ```
+<p>6. Attach a mapper node to the inject node.</p>
+<p>6. Point the url in the config of mapper node.</p>
+<p>7. On executing this flow, the expected output will be as follows,</p>
 
         ```
         {
