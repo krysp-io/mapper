@@ -71,17 +71,12 @@ The mapper node can be utilized in any flow with input and output JSON data. Bel
 
         ```
         {
-          "input" :{
             "name" : "eugene",
             "age": 26,
             "address" :{
               "street" : "homestreet"
             },
             "test": ""
-          },
-            "output" :{
-            "name" : "eugene",
-            "age": 26,
             "info" :{
               "street" : "homestreet"
             }
