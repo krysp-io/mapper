@@ -2,12 +2,6 @@
 # node-red-contrib-field-mapper
 -------
 
-A <a href="http://nodered.org" target="_new">Node-RED</a> node can be used to modify a message’s properties without having to resort to a Function node.
-
-Each node can be configured with multiple operations that are applied in order. The available operations are:
-
-Set - set a property. The value can be a variety of different types, or can be taken from an existing message.
-
 This module provides a “mapper” node in Node-RED for mapping JSON data from one format (i.e. input) to another (i.e. output).
 
 This node can be helpful in scenarios where JSON data transformation is required or while integrating two different third-party APIs.
