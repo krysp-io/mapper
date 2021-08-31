@@ -67,7 +67,7 @@ The mapper node can be utilized in any flow with input and output JSON data. Bel
         
 <p>3. To map required fields from input to output data, open config node and <b>Set Field Values</b>. Example, select "address.street" to "info.street" to add the mapping.</p>
 <p>4. Attach a Http reponse node.</p>
-<p>5. Drag and drop inject node with msg.payload as </p>
+<p>5. Drag and drop inject node and set msg.payload as </p>
 
         ```
         {
