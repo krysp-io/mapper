@@ -80,7 +80,7 @@ The mapper node can be utilized in any flow with input and output JSON data. Bel
         }
         ```
 <p>6. Attach a mapper node to the inject node.</p>
-<p>7. Point the url of created http in node in the config of mapper node.</p>
+<p>7. Point the created http in url in the config of mapper node.</p>
 <p>8. Attach debug node to mapper node</p>
 <p>9. On executing this flow, the expected output will be as follows,</p>
 
