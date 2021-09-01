@@ -8,7 +8,7 @@ module.exports = function (RED) {
     this.url = n.url;
   }
 
-  RED.nodes.registerType("mapping", MappingNode);
+  RED.nodes.registerType("Mapping", MappingNode);
 
   function MapperNode(n) {
     RED.nodes.createNode(this, n);
@@ -25,6 +25,6 @@ module.exports = function (RED) {
     });
   }
 
-  RED.nodes.registerType("mapper", MapperNode);
+  RED.nodes.registerType("Mapper", MapperNode);
 };
   

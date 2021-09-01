@@ -1,12 +1,55 @@
-<script type="text/html" data-template-name="mapping">
+<script type="text/html" data-template-name="Mapping">
     <div class="form-row">
         <label for="node-config-input-url"><span>URL</span></label>
         <input type="text" id="node-config-input-url">
     </div>
 </script>
+<script type="text/html" data-help-name="Mapping">
+    <h3>Config</h3>
+    Add the URL in the properties consisting of following JSON format.
+    <br />
+    <pre>
+{
+    "input": {
+        // to value in set form field comes from here
+    },
+    "output": {
+        // from value in set form field comes from here
+    }
+}
+    </pre>
+    <br/>
+    <a href="https://www.youtube.com/watch?v=U3YuTAf7YG4">Watch the demo.</h3>
+
+</script>
+<script type="text/html" data-help-name="Mapper">
+    <p>This node helps in mapping JSON data from one format (i.e. input) to another (i.e. output).</p>
+    <p>It is helpful in scenarios where JSON data transformation is required or while integrating two different third-party APIs.</p>
+    <h3>Config</h3>
+    Add new mapping and add the URL in the properties consisting of following JSON format.
+    
+    <pre>
+{
+    "input": {
+        // to value in set form field comes from here
+    },
+    "output": {
+        // from value in set form field comes from here
+    }
+}
+    </pre>
+    <h3>Outputs</h3>
+    <dl class="message-properties">
+        <dt>payload<span class="property-type">various</span></dt>
+        <dd>The configured payload of the message.</dd>
+        <dt class="optional">topic <span class="property-type">string</span></dt>
+        <dd>An optional property that can be configured in the node.</dd>
+    </dl>
+    <a href="https://www.youtube.com/watch?v=U3YuTAf7YG4">Watch the demo.</h3>
+</script>
 
 <script type="text/javascript">
-    RED.nodes.registerType('mapping', {
+    RED.nodes.registerType('Mapping', {
         category: 'config',
         color: "rgb(218, 196, 180)",
         defaults: {
@@ -22,7 +65,7 @@
     });
 </script>
 
-<script type="text/html" data-template-name="mapper">
+<script type="text/html" data-template-name="Mapper">
     <style>
         ol#node-input-rule-container .red-ui-typedInput-container {
             flex:1;
@@ -64,19 +107,19 @@
         }, [])
     }
     let inputMapping = {}, outputMapping = {};
-    RED.nodes.registerType('mapper', {
+    RED.nodes.registerType('Mapper', {
         category: 'function',
         color: '#a6bbcf',
         defaults: {
             name: { value: "" },
             rules: { value: [] },
-            mapping: { type: "mapping", required: true },
+            mapping: { type: "Mapping", required: true },
         },
         inputs: 1,
         outputs: 1,
         icon: "file.png",
         label: function () {
-            return this.name || "mapper";
+            return this.name || "Mapper";
         },
         oneditprepare: function () {
             const from = 'from';
