@@ -105,9 +105,9 @@ The mapper node can be utilized in any flow with input and output JSON data. Bel
 https://www.youtube.com/watch?v=U3YuTAf7YG4
 
 # Krysp Platform Features
-Flow execution metrics
-Multi-user capabilities
-Enhanced log viewer that should application and system logs
+<p>Flow execution metrics</p>
+<p>Multi-user capabilities</p>
+<p>Enhanced log viewer that should application and system logs</p>
 
 # Discussions and suggestions
 -------
