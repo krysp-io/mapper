@@ -107,7 +107,7 @@ https://www.youtube.com/watch?v=U3YuTAf7YG4
 # Krysp Platform Features
 <p>Flow execution metrics</p>
 <p>Multi-user capabilities</p>
-<p>Enhanced log viewer that should application and system logs</p>
+<p>Enhanced log viewer that shows application and system logs</p>
 
 # Discussions and suggestions
 -------
