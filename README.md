@@ -6,6 +6,21 @@ This module provides a “mapper” node in Node-RED for mapping JSON data from 
 
 This node can be helpful in scenarios where JSON data transformation is required or while integrating two different third-party APIs.
 
+Mapper uses JSON specification file to assign values of input fields to output fields. Input JSON field can be a simple field or an object. Input fields/objects can be mapped to expected output fields/objects.
+
+During runtime the “mapper” node will assign input fields/objects values to corresponding output fields/objects. Transformed JSON document will contain both input and output fields/objects. Mapper node will NOT delete any fields after transforming input JSON into desired output JSON document. “Change” node may be used to delete obsolete fields after transformation, if needed.
+
+## Public Mapper Definition
+
+Shared Field Mapper Definitions Public field definitions that are peer-reviewed and merged into [mapper-definition](https://github.com/krysp-io/mapper-definitions) for community sharing and usage to help keep definitions up-to-date. Intended to be used and maintained by community.
+
+Contributions are welcome! See the [contribution guidelines]('./contributing.md').
+
+link: [Public Mapper repository](!https://github.com/krysp-io/mapper-definitions)
+
+## Private Mapper Definition
+
+Private Field Mapper Definitions If your enterprise has a specific object model that will be used in integrations and you would like to keep those definitions private then you can point to a JSON file hosted on your own web servers.
 # Pre-requisites
 
 ---
@@ -68,13 +83,10 @@ The mapper node can be utilized in any flow with input and output JSON data. Bel
 
 Select <strong>Mapping</strong> dropdown to view saved custom mappers
 
-<br>
-Mapper uses JSON specification file to assign values of input fields to output fields. Input JSON field can be a simple field or an object. Input fields/objects can be mapped to expected output fields/objects.
-<br>
-During runtime the “mapper” node will assign input fields/objects values to corresponding output fields/objects. Transformed JSON document will contain both input and output fields/objects. Mapper node will NOT delete any fields after transforming input JSON into desired output JSON document. “Change” node may be used to delete obsolete fields after transformation, if needed.
-<br>
-By default mapper.json file will be selected to load sample mapper JSON object. You can click on <strong>Load</strong> button to load default mapper JSON to schema field and edit as required.
-<br>
+By default public mapper.json file will be selected to load sample mapper JSON object. You can click on <strong>Load</strong> button to load default mapper JSON to schema field and edit as required.
+
+Additionally you can also use private mapper definition by selecting private in dropdown and pasting the link of public S3 bucket/json file or available valid json definition.
+
 Below is an example mapper JSON which takes sample user details as JSON input and converts it to new payload/data. We can also add new key-value pair which may or may not be present in input JSON.
 
 </p>.
@@ -315,6 +327,14 @@ https://www.youtube.com/watch?v=U3YuTAf7YG4
 <p>Flow execution metrics</p>
 <p>Multi-user capabilities</p>
 <p>Enhanced log viewer that shows application and system logs</p>
+
+# Contributions
+---
+
+Development of Mapper Node happens in the open on GitHub, and we are grateful to the community for contributing bugfixes and improvements. Read below to learn how you can take part in improving mapper node.
+
+## Contributing Guide
+Read our [contributing guide]('./contributing.md') to learn about our development process, how to propose bugfixes and improvements.
 
 # Discussions and suggestions
 
