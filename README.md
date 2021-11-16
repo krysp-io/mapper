@@ -14,7 +14,7 @@ During runtime the “mapper” node will assign input fields/objects values to 
 
 Shared Field Mapper Definitions Public field definitions that are peer-reviewed and merged into [mapper-definition](https://github.com/krysp-io/mapper-definitions) for community sharing and usage to help keep definitions up-to-date. Intended to be used and maintained by community.
 
-Contributions are welcome! See the [contribution guidelines]('./contributing.md').
+Contributions are welcome! See the [contribution guidelines](contributing.md).
 
 link: [Public Mapper repository](!https://github.com/krysp-io/mapper-definitions)
 
@@ -334,7 +334,7 @@ https://www.youtube.com/watch?v=U3YuTAf7YG4
 Development of Mapper Node happens in the open on GitHub, and we are grateful to the community for contributing bugfixes and improvements. Read below to learn how you can take part in improving mapper node.
 
 ## Contributing Guide
-Read our [contributing guide]('./contributing.md') to learn about our development process, how to propose bugfixes and improvements.
+Read our [contributing guide](contributing.md) to learn about our development process, how to propose bugfixes and improvements.
 
 # Discussions and suggestions
 
