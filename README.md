@@ -81,15 +81,19 @@ The mapper node can be utilized in any flow with input and output JSON data. Bel
 
 <p>3. You can create a new mapping by clicking on edit button on Mapper properties panel and having <strong>Add new Mappings...</strong> selected.
 
+<img src='https://static.node.iopulsedev.net/add_mapper.png' alt='add mapper'>
+
 Select <strong>Mapping</strong> dropdown to view saved custom mappers
 
 By default public mapper.json file will be selected to load sample mapper JSON object. You can click on <strong>Load</strong> button to load default mapper JSON to schema field and edit as required.
 
 Additionally you can also use private mapper definition by selecting private in dropdown and pasting the link of public S3 bucket/json file or available valid json definition.
 
+<img src='https://static.node.iopulsedev.net/custom_mapper.png' alt='custom mapper'>
+
 Below is an example mapper JSON which takes sample user details as JSON input and converts it to new payload/data. We can also add new key-value pair which may or may not be present in input JSON.
 
-</p>.
+</p>
 
 ```json
 {
@@ -335,6 +339,7 @@ Development of Mapper Node happens in the open on GitHub, and we are grateful to
 
 ## Contributing Guide
 Read our [contributing guide](contributing.md) to learn about our development process, how to propose bugfixes and improvements.
+
 
 # Discussions and suggestions
 
