@@ -68,10 +68,13 @@ The mapper node can be utilized in any flow with input and output JSON data. Bel
 
 Select <strong>Mapping</strong> dropdown to view saved custom mappers
 
-<br> Mapper requires fields(JSON properties or Object Properties) to be mapped to new fields, So incoming JSON data is placed is placed under <code>input</code> JSON key and required JSON mapped field is placed under <code>output</code> JSON key.
+<br>
+Mapper uses JSON specification file to assign values of input fields to output fields. Input JSON field can be a simple field or an object. Input fields/objects can be mapped to expected output fields/objects.
+<br>
+During runtime the “mapper” node will assign input fields/objects values to corresponding output fields/objects. Transformed JSON document will contain both input and output fields/objects. Mapper node will NOT delete any fields after transforming input JSON into desired output JSON document. “Change” node may be used to delete obsolete fields after transformation, if needed.
 <br>
 By default mapper.json file will be selected to load sample mapper JSON object. You can click on <strong>Load</strong> button to load default mapper JSON to schema field and edit as required.
-<br><br>
+<br>
 Below is an example mapper JSON which takes sample user details as JSON input and converts it to new payload/data. We can also add new key-value pair which may or may not be present in input JSON.
 
 </p>.
