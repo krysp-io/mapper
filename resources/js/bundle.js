@@ -1,4 +1,4 @@
-const path = 'https://raw.githubusercontent.com/krysp-io/mapper-definitions/feat/mapping-loader/';
+const path = 'https://raw.githubusercontent.com/krysp-io/mapper-definitions/main/';
 
 const formater = (name) =>
   name
