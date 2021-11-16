@@ -6,6 +6,18 @@ This module provides a “mapper” node in Node-RED for mapping JSON data from 
 
 This node can be helpful in scenarios where JSON data transformation is required or while integrating two different third-party APIs.
 
+Mapper uses mapper definition files from the public definitions repository. For definitions that cannot be made public, mapper supports use of privvate mapping definition files that can be fetched from a URL.
+
+
+# Public Mapper Definitions
+Brief explanation of this repository with link to github. 
+Update the readme for mapper definitions repository.
+
+
+# Private Mapper Definitions
+Explain how and where the users can define and access these definition files. Example: S3 or google drive file etc.... etc......
+
+
 # Pre-requisites
 
 ---
